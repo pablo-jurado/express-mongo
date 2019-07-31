@@ -26,7 +26,7 @@ class App extends React.Component {
     axios.post('/delete', {"id": id})
       .then((response) => {
         if (response.status === 200) {
-          this.setState({ users: response.data.users });
+          this.updateUsers();
           history.push("/");
         } else {
           console.log('delete fail');
@@ -55,7 +55,7 @@ class App extends React.Component {
           <Route path="/add/" render={(props)=> (<UserForm history={props.history} updateUsers={this.updateUsers} />) } />
           <Route path="/user/:id" render={(props) => {
             const id = props.match.params.id;
-            const userData = this.state.users.find(user => user.id === id);
+            const userData = this.state.users.find(user => user._id === id);
             return <User user={ userData } history={props.history} deleteUser={ this.deleteUser }  updateUsers={this.updateUsers} />
           }} />
         </main>

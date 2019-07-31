@@ -1,9 +1,17 @@
 var express = require('express');
 var router = express.Router();
-var data = require('../data/index');
+var User = require('../models/user');
 
 router.get('/', function(req, res, next) {
-  res.json(data.getUsers());
+  
+  User.find({}, function(err, users) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(users);
+    }
+  });
+
 });
 
 module.exports = router;

@@ -21,7 +21,7 @@ const UserInfo = ({user, deleteUser, history, toggleEdit}) => {
                     </p>
                     <button className="btn btn-secondary" onClick={ () => { toggleEdit() } }>Edit</button>
                     <div className="float-right">
-                        <button className="btn btn-danger ml-3" onClick={ () => { deleteUser(user.id, history) } }>Delete</button>
+                        <button className="btn btn-danger ml-3" onClick={ () => { deleteUser(user._id, history) } }>Delete</button>
                     </div>
                 </div>
             </div>

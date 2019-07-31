@@ -1,14 +1,21 @@
 var express = require('express');
 var router = express.Router();
-var data = require('../data/index');
+var User = require('../models/user');
 
 router.post('/', function(req, res) {
   const id = req.body.id;
-  if (id) {
-    const updatedUserList = data.deleteUser(id);
 
-    res.json( {users: updatedUserList} );
-  }
+  const query = { _id: id }
+  User.remove(query, function(err) {
+    if (err) {
+      console.log(err);
+    } else {
+      User.find({}, function(err, users) {
+        if (err) console.log(err);
+        res.json(users);
+      });
+    }
+  });
 });
 
 module.exports = router;

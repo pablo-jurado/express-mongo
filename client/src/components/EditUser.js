@@ -7,7 +7,7 @@ class EditUser extends React.Component {
         "firstName": this.props.user.firstName,
         "lastName": this.props.user.lastName,
         "email": this.props.user.email,
-        "id": this.props.user.id,
+        "id": this.props.user._id,
       },
     }
 

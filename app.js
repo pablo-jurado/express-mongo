@@ -9,6 +9,18 @@ var addRouter = require('./routes/add');
 var deleteRouter = require('./routes/delete');
 var updateRouter = require('./routes/update');
 
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/myDB', { useNewUrlParser: true });
+let db = mongoose.connection;
+
+db.on('error', function(err) {
+    console.log(err);
+});
+
+db.once('open', function() {
+    console.log("connected to MongoDB");
+});
+
 var app = express();
 
 // middleware
