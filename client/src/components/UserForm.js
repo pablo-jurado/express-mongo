@@ -92,7 +92,7 @@ class UserForm extends React.Component {
             <input className="btn btn-primary"
               type="submit"
               value="Add User" />
-            <Link className="btn btn-danger ml-3" to="/">Cancel</Link>
+            <Link className="btn btn-danger ml-3" to="/users">Cancel</Link>
           </form>
         </div>
       </div>

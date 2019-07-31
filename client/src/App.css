@@ -1,6 +1,21 @@
+#root, .container {
+    min-height: 100vh;
+}
+
+#login, #register {
+    margin-top: 20%;
+}
+
 nav {
     background-color: rgb(233, 245, 255);
+    padding: 10px;
+    margin-bottom: 20px;
 }
+
+nav ul {
+    margin: 0px;
+}
+
 nav li {
     display: inline-block;
     margin: 10px;
